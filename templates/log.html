@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-6 mb-4">
+            <div class="container-fluid" style="margin-top: 1%">
+                <div class="card text-center">
+                    <div class="card-header" style="background-color: rgb(196, 81, 18)">
+                        <h1>Registrati a MotorValley</h1>
+                    </div>
+                    <div class="card-body">
+                        <form name="signup_form" >
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="nome" placeholder="name@example.com">
+                                <label for="floatingInput">Nome e Cognome</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="matricola" placeholder="name@example.com">
+                                <label for="floatingInput">Matricola</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input list="ruolo" name="ruolo" class="form-select" required>
+                                <label for="floatingInput">Ruolo</label>
+                                <datalist id="ruolo" name="ruolo" >
+                                    <option value="Amministratore" />
+                                    <option value="Utente" />
+                                </datalist>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" name="password" placeholder="name@example.com">
+                                <label for="floatingInput">Password</label>
+                            </div>
+                            <br>
+                            <p class="error error--hidden"></p>
+                            </h4>
+                            <input type="submit" value="Registrati" class="btn btn-outline-dark btn-lg">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mb-4">
+            <div class="container-fluid" style="margin-top: 1%">
+                <div class="card text-center">
+                    <div class="card-header" style="background-color: rgb(196, 81, 18)">
+                        <h1>Accedi a MotorValley</h1>
+                    </div>
+                    <div class="card-body">
+                        <form name="login_form" >
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="matricola" placeholder="name@example.com">
+                                <label for="floatingInput">Matricola</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" name="password" placeholder="name@example.com">
+                                <label for="floatingInput">Password</label>
+                            </div>
+                            <br>
+                            <p class="error error--hidden"></p>
+                            </h4>
+                            <input type="submit" value="Accedi" class="btn btn-outline-dark btn-lg">
+            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

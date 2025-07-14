@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container-fluid" style="margin-top: 1%">
+    <div class="card text-center">
+        <div class="card-header" style="background-color: rgb(196, 81, 18)">
+            <h1>Il tuo account</h1>
+        </div>
+        <div class="card-body">
+            <form name="modifica_pass_form" action="{{ url_for('modificapass', utente =  session['user']['matricola']) }}" method="POST" role="form">
+                <h4>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="password" placeholder="name@example.com" value="{{ session['user']['nome'] }}" disabled>
+                    <label for="floatingInput">Nome</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="password" placeholder="name@example.com" value="{{ session['user']['matricola'] }}" disabled>
+                    <label for="floatingInput">Matricola</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="password" placeholder="name@example.com" value="{{ session['user']['ruolo'] }}" disabled>
+                    <label for="floatingInput">Ruolo</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="name@example.com">
+                    <label for="floatingInput">Password Attuale</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="newpassword" placeholder="name@example.com">
+                    <label for="floatingInput">Nuova Password</label>
+                </div>
+                <input type="submit" value="Modifica password" class="btn btn-outline-dark btn-lg">
+            </form>
+        </div>
+        <div class="card-footer card-text text-muted">
+        <h3><b>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        </b></h3>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
